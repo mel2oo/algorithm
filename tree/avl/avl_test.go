@@ -6,11 +6,11 @@ import (
 
 type Int int
 
-func (t Int) Equals(k Key) bool {
-	return t == k
+func (t Int) Equals(k Equalable) bool {
+	return t == k.(Int)
 }
 
-func (t Int) Less(k Key) bool {
+func (t Int) Less(k Lessable) bool {
 	return t < k.(Int)
 }
 

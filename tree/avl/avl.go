@@ -2,10 +2,19 @@ package avl
 
 import "fmt"
 
+type Equalable interface {
+	Equals(Equalable) bool
+}
+
+type Lessable interface {
+	Equalable
+	Less(Lessable) bool
+}
+
 // AVLNode Key Interface
 type Key interface {
-	Equals(Key) bool
-	Less(Key) bool
+	Equals(Equalable) bool
+	Less(Lessable) bool
 }
 
 // AVLTree structure
